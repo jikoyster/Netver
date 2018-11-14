@@ -25,21 +25,22 @@
 		<!--end::Web font -->
 
 		<!--begin::Base Styles -->
-		<link href="{{ URL::asset('doctracc/assets/vendors/base/vendors.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="../assets/doctracc/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
 
 		<!--RTL version:<link href="../../../assets/vendors/base/vendors.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
-		<link href="{{ URL::asset('doctracc/assets/demo/default/base/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="../assets/doctracc/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
 
 		<!--RTL version:<link href="../../../assets/demo/default/base/style.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
 
 		<!--end::Base Styles -->
-		<link rel="shortcut icon" href="{{ URL::asset('doctracc/assets/demo/default/media/img/logo/favicon.ico') }}" />
+		<link rel="shortcut icon" href="../assets/doctracc/assets/demo/default/media/img/logo/favicon.ico" />
 	</head>
 
 	<!-- end::Head -->
 
 	<!-- begin::Body -->
 	<body class="m--skin- m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+
 
 		<!-- begin:: Page -->
 		<div class="m-grid m-grid--hor m-grid--root m-page">
@@ -50,7 +51,7 @@
 							<div class="m-login__wrapper">
 								<div class="m-login__logo">
 									<a href="#">
-										<img src="{{ URL::asset('doctracc/assets/app/media/img/logos/logo_default_dark.png') }}">
+										<img src="../assets/doctracc/assets/app/media/img/logos/logo_default_dark.png">
 									</a>
 								</div>
 								<div class="m-login__signin">
@@ -141,7 +142,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content m-grid-item--center" style="background-image: url(../../../assets/app/media/img//bg/bg-5.jpg)">
+				<div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content m-grid-item--center" style="background-image: url(../assets/doctracc/assets/app/media/img/bg/bg-5.jpg)">
 					<div class="m-grid__item">
 						<h3 class="m-login__welcome">Welcome</h3>
 						<p class="m-login__msg">
@@ -156,13 +157,13 @@
 		<!-- end:: Page -->
 
 		<!--begin::Base Scripts -->
-		<script src="{{ URL::asset('doctracc/assets/vendors/base/vendors.bundle.js') }}" type="text/javascript"></script>
-		<script src="{{ URL::asset('doctracc/assets/demo/default/base/scripts.bundle.js') }}" type="text/javascript"></script>
+		<script src="../assets/doctracc/assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+		<script src="../assets/doctracc/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
 
 		<!--end::Base Scripts -->
 
 		<!--begin::Page Snippets -->
-		<script src="{{ URL::asset('doctracc/assets/snippets/custom/pages/user/login.js') }}" type="text/javascript"></script>
+		<script src="../assets/doctracc/assets/snippets/custom/pages/user/login.js" type="text/javascript"></script>
 
 		<!--end::Page Snippets -->
 	</body>
