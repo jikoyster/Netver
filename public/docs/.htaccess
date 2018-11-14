@@ -1,0 +1,4 @@
+<FilesMatch "\.(htaccess|jpg|docx)$">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>
