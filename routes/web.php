@@ -26,7 +26,10 @@ Route::get('/', function () {
 	if(request()->server('SERVER_NAME') == 'sysacc.netver.niel' || request()->server('SERVER_NAME') == 'sysacc.netver.com')
 		return redirect('home');
 	else
-		return view('home-accountant');
+		/*return view('home-accountant');*/
+
+		/*return view("advisors-login");*/
+		return view("home");
 });
 
 Route::group(['middleware'=>'auth'], function(){
