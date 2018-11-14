@@ -44,7 +44,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
               <li class="nav-item">
-                <a class="nav-link link text-white display-7" href="{{url('register-accountant')}}" aria-expanded="false">Accountants</a>
+                <a class="nav-link link text-white display-7" href="{{url('advisors')}}" aria-expanded="false">Accountants</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link link text-white display-7" href="http://sysacc.netver.com/register" aria-expanded="false">Register</a>
