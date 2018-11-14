@@ -17,6 +17,10 @@ Route::get('/register-accountant/testing', "TestingController@testing");
 Route::get('/advisors', "AdvisorsController@index");
 Route::get('/advisors/login', "AdvisorsController@login");
 
+Route::get('/profile', function(){
+	return view("profile");
+});
+
 
 /*Route::get('/register-accountant', function () {
 		return view('home-accountant');
@@ -28,7 +32,7 @@ Route::get('/', function () {
 	else
 		/*return view('home-accountant');*/
 
-		/*return view("advisors-login");*/
+		// return view("advisors-login");
 		return view("home");
 });
 

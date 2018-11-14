@@ -60,7 +60,7 @@
                         <div class="m-stack__item m-brand  m-brand--skin-dark ">
                             <div class="m-stack m-stack--ver m-stack--general">
                                 <div class="m-stack__item m-stack__item--middle m-brand__logo">
-                                    <a href="index.html" class="m-brand__logo-wrapper">
+                                    <a href="{{url('/')}}" class="m-brand__logo-wrapper">
                                         <img alt="" src="../assets/doctracc/assets/demo/default/media/img/logo/logo_default_dark.png" />
                                     </a>
                                 </div>
@@ -352,7 +352,7 @@
                                                                     <span class="m-nav__section-text">Section</span>
                                                                 </li>
                                                                 <li class="m-nav__item">
-                                                                    <a href="#" class="m-nav__link">
+                                                                    <a href="{{url('/profile')}}" class="m-nav__link">
                                                                         <i class="m-nav__link-icon flaticon-profile-1"></i>
                                                                         <span class="m-nav__link-title">
                                                                             <span class="m-nav__link-wrap">
