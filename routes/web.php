@@ -1,5 +1,8 @@
 <?php
 use Illuminate\Support\Facades\DB;
+
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/register-accountant/testing', "TestingController@testing");
+// Route::get('/register-accountant/testing', "TestingController@testing");
 
 // 
 Route::get('/advisors', "AdvisorsController@index");
@@ -21,20 +24,38 @@ Route::get('/profile', function(){
 	return view("profile");
 });
 
+//modifying login operation
+Route::get('/', function(Request $request){
+
+	/* logging out **************
+	Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+	print_r( $request->session() );
+	*/
+
+	$session = $request->input();
+	if($session){
+		return view("profile");
+	}else{
+		return view("login");
+	}
+});
+
+Route::post('/login', 'LoginController@login');
+Route::get('/login', 'LoginController@login');
 
 /*Route::get('/register-accountant', function () {
 		return view('home-accountant');
 });*/
 
-Route::get('/', function () {
-	if(request()->server('SERVER_NAME') == 'sysacc.netver.niel' || request()->server('SERVER_NAME') == 'sysacc.netver.com')
-		return redirect('home');
-	else
-		/*return view('home-accountant');*/
+// Route::get('/', function () {
+// 	if(request()->server('SERVER_NAME') == 'sysacc.netver.niel' || request()->server('SERVER_NAME') == 'sysacc.netver.com')
+// 		return redirect('home');
+// 	else
+// 		/*return view('home-accountant');*/
 
-		// return view("advisors-login");
-		return view("home");
-});
+// 		// return view("advisors-login");
+// 		return view("home");
+// });
 
 Route::group(['middleware'=>'auth'], function(){
 	Route::get('country/state-province/{id}','v1\CountryController@showStateProvince')->name('country.state');
