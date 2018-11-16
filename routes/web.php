@@ -18,14 +18,14 @@ session_start();
 // Route::get('/register-accountant/testing', "TestingController@testing");
 
 // 
-Route::get('/advisors', "AdvisorsController@index");
-Route::get('/advisors/login', "AdvisorsController@login");
+Route::get('/dashboard', "DashboardController@index");
+// Route::get('/advisors/login', "AdvisorsController@login");
 
 Route::get('/profile', function(){
-	if(Auth::user()){
+	if( isset($_SESSION['email']) ){
 		return view("profile");
 	}else{
-		return view("login");
+		return redirect("/login");
 	}
 });
 
@@ -37,16 +37,19 @@ Route::get('/', function(Request $request){
 	// print_r($_SESSION['email']);
 
 	// if($session){
-	if(Auth::user()){
-		return redirect("profile");
+	if( isset($_SESSION['email']) ){
+		return redirect("/dashboard");
 	}else{
 		return view("login");
 	}	
 });
 
-// Route::post('/login', 'LoginController@login');
 Route::post('/login', 'LoginController@login');
-Route::post('/logout', 'LoginController@logout');
+Route::post('/logout', function(){
+	session_destroy();
+
+	return redirect("/");
+});
 
 /*Route::get('/register-accountant', function () {
 		return view('home-accountant');

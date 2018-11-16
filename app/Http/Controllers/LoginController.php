@@ -19,7 +19,7 @@ class LoginController extends BaseController
 		$email = $req->input('email');
 		$password = $req->input('password');
 
-		// echo $email."---".$password;
+		echo $email."---".$password."<br/>";
 
 		$checklogin = DB::table('users')->where(['email'=>$email, 'password'=>md5($password)])->get();
 		DB::table('users')
@@ -33,11 +33,11 @@ class LoginController extends BaseController
 					->select('email')
 					->where(['email'=>$email, 'password'=>md5($password)])
 					->get();
-			// echo "email: ".$_SESSION['email'];
+			echo "email: ".$_SESSION['email'];
 
-			return view('/profile');
+			return redirect('/dashboard');
 		}else{
-			return view('/login');
+			return redirect('/');
 		}
 
 	}
@@ -45,7 +45,9 @@ class LoginController extends BaseController
 	public function logout(){
 		DB::table('users')
 			->update(['remember_token' => '']);
-		return redirect('/');
+
+		Auth::logout();
+		return redirect('/profile');
 	}
 
 	public function checkForLoginUser(){
