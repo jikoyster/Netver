@@ -235,17 +235,20 @@
                 </a>
             </li>
             
+            <!--
             <li class="m-menu__section ">
                 <h4 class="m-menu__section-text">Page Viewer</h4>
                 <i class="m-menu__section-icon flaticon-more-v2"></i>
             </li>
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true">
-                <!-- <a href="snippets/pages/user/login-1.html" class="m-menu__link m-menu__toggle"> -->
+                -- <a href="snippets/pages/user/login-1.html" class="m-menu__link m-menu__toggle"> --
+                
                 <a href="/login" class="m-menu__link m-menu__toggle"> 
                     <span class="m-menu__link-text">Login Form</span>
 
                 </a>
-            </li>
+
+            </li> -->
             
             
         </ul>
