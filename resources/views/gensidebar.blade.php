@@ -225,10 +225,13 @@
                 </div>
             </li>
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true">
-                <a href="javascript:;" class="m-menu__link m-menu__toggle">
+                <a href="javascript:;" class="m-menu__link m-menu__toggle"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class="m-menu__link-icon flaticon-logout"></i>
                     <span class="m-menu__link-text">Log Out</span>
                     <!-- <i class="m-menu__ver-arrow la la-angle-right"></i> -->
+
+                    <form id="logout-form" action="/logout" method="POST" style="display: none;">{{ csrf_field() }}</form>
                 </a>
             </li>
             

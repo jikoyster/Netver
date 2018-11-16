@@ -50,11 +50,12 @@
 						<div class="m-stack__item m-stack__item--fluid">
 							<div class="m-login__wrapper">
 								<div class="m-login__logo">
-									<a href="#">
+									<a href="/">
 										<img src="../assets/doctracc/assets/app/media/img/logos/logo_default_dark.png">
 									</a>
 								</div>
 								<div class="m-login__signin">
+
 									<div class="m-login__head">
 										<h3 class="m-login__title">Sign In To Admin</h3>
 									</div>

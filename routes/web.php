@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+session_start();
 
 // Route::get('/register-accountant/testing', "TestingController@testing");
 
@@ -21,27 +22,31 @@ Route::get('/advisors', "AdvisorsController@index");
 Route::get('/advisors/login', "AdvisorsController@login");
 
 Route::get('/profile', function(){
-	return view("profile");
-});
-
-//modifying login operation
-Route::get('/', function(Request $request){
-
-	/* logging out **************
-	Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-	print_r( $request->session() );
-	*/
-
-	$session = $request->input();
-	if($session){
+	if(Auth::user()){
 		return view("profile");
 	}else{
 		return view("login");
 	}
 });
 
+//modifying login operation
+Route::get('/', function(Request $request){	
+	$session = $request->input();
+
+	// echo "adfsda: ";
+	// print_r($_SESSION['email']);
+
+	// if($session){
+	if(Auth::user()){
+		return redirect("profile");
+	}else{
+		return view("login");
+	}	
+});
+
+// Route::post('/login', 'LoginController@login');
 Route::post('/login', 'LoginController@login');
-Route::get('/login', 'LoginController@login');
+Route::post('/logout', 'LoginController@logout');
 
 /*Route::get('/register-accountant', function () {
 		return view('home-accountant');
