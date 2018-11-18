@@ -51,6 +51,13 @@ Route::post('/logout', function(){
 	return redirect("/");
 });
 
+Route::get('/ui-reports', function(){
+
+	$reports = DB::table('ui_reports')->get();
+
+	return view('ui-reports', ['reports' => $reports]);
+});
+
 /*Route::get('/register-accountant', function () {
 		return view('home-accountant');
 });*/
