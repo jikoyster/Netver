@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 session_start();
 
 // Route::get('/register-accountant/testing', "TestingController@testing");
-
+Route::get('/change-password', "UserController@index");
 // 
 Route::get('/dashboard', "DashboardController@index");
 // Route::get('/advisors/login', "AdvisorsController@login");

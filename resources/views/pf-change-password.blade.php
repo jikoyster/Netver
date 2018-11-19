@@ -306,14 +306,12 @@
 																<li class="m-nav__section m--hide">
 																	<span class="m-nav__section-text">Section</span>
 																</li>
-
-
 																<li class="m-nav__item">
 																	<a href="#" class="m-nav__link">
 																		<i class="m-nav__link-icon flaticon-profile-1"></i>
 																		<span class="m-nav__link-title">
 																			<span class="m-nav__link-wrap">
-																				<span class="m-nav__link-text">My Profile sdfds</span>
+																				<span class="m-nav__link-text">My Profile</span>
 																				<span class="m-nav__link-badge">
 																					<span class="m-badge m-badge--success">2</span>
 																				</span>
@@ -472,16 +470,12 @@
 												<span class="m-nav__section-text">Section</span>
 											</li>
 
-											<li class="m-nav__item">
-												<a href="/change-password" class="m-nav__link">
-													<i class="m-nav__link-icon flaticon-lock"></i>
-													<span class="m-nav__link-text">Change Password</span>
-												</a>
-											</li>
+											
+
 
 
 											<li class="m-nav__item">
-												<a href="../header/profile&amp;demo=default.html" class="m-nav__link">
+												<a href="/profile" class="m-nav__link">
 													<i class="m-nav__link-icon flaticon-profile-1"></i>
 													<span class="m-nav__link-title">
 														<span class="m-nav__link-wrap">
@@ -524,7 +518,12 @@
 												</a>
 											</li>
 										</ul>
+										<div class="m-portlet__body-separator"></div>
 										
+
+
+
+
 									</div>
 								</div>
 							</div>
@@ -626,94 +625,30 @@
 													</div>
 													<div class="form-group m-form__group row">
 														<div class="col-10 ml-auto">
-															<h3 class="m-form__section">1. Personal Details</h3>
+															<h3 class="m-form__section">Change Password</h3>
 														</div>
 													</div>
 													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">Full Name</label>
+														<label for="example-text-input" class="col-2 col-form-label">Old Password</label>
 														<div class="col-7">
-															<input class="form-control m-input" value="Mark Andre" type="text">
+															<input class="form-control m-input"  type="text">
 														</div>
 													</div>
 													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">Occupation</label>
+														<label for="example-text-input" class="col-2 col-form-label">New Password</label>
 														<div class="col-7">
-															<input class="form-control m-input" value="CTO" type="text">
+															<input class="form-control m-input" type="password">
 														</div>
 													</div>
 													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">Company Name</label>
+														<label for="example-text-input" class="col-2 col-form-label">Confirm Password</label>
 														<div class="col-7">
-															<input class="form-control m-input" value="Keenthemes" type="text">
-															<span class="m-form__help">If you want your invoices addressed to a company. Leave blank to use your full name.</span>
+															<input class="form-control m-input" type="password">
 														</div>
 													</div>
-													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">Phone No.</label>
-														<div class="col-7">
-															<input class="form-control m-input" value="+456669067890" type="text">
-														</div>
-													</div>
-													<div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
-													<div class="form-group m-form__group row">
-														<div class="col-10 ml-auto">
-															<h3 class="m-form__section">2. Address</h3>
-														</div>
-													</div>
-													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">Address</label>
-														<div class="col-7">
-															<input class="form-control m-input" value="L-12-20 Vertex, Cybersquare" type="text">
-														</div>
-													</div>
-													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">City</label>
-														<div class="col-7">
-															<input class="form-control m-input" value="San Francisco" type="text">
-														</div>
-													</div>
-													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">State</label>
-														<div class="col-7">
-															<input class="form-control m-input" value="California" type="text">
-														</div>
-													</div>
-													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">Postcode</label>
-														<div class="col-7">
-															<input class="form-control m-input" value="45000" type="text">
-														</div>
-													</div>
-													<div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
-													<div class="form-group m-form__group row">
-														<div class="col-10 ml-auto">
-															<h3 class="m-form__section">3. Social Links</h3>
-														</div>
-													</div>
-													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">Linkedin</label>
-														<div class="col-7">
-															<input class="form-control m-input" value="www.linkedin.com/Mark.Andre" type="text">
-														</div>
-													</div>
-													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">Facebook</label>
-														<div class="col-7">
-															<input class="form-control m-input" value="www.facebook.com/Mark.Andre" type="text">
-														</div>
-													</div>
-													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">Twitter</label>
-														<div class="col-7">
-															<input class="form-control m-input" value="www.twitter.com/Mark.Andre" type="text">
-														</div>
-													</div>
-													<div class="form-group m-form__group row">
-														<label for="example-text-input" class="col-2 col-form-label">Instagram</label>
-														<div class="col-7">
-															<input class="form-control m-input" value="www.instagram.com/Mark.Andre" type="text">
-														</div>
-													</div>
+													
+
+													
 												</div>
 												<div class="m-portlet__foot m-portlet__foot--fit">
 													<div class="m-form__actions">
