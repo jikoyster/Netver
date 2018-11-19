@@ -1,0 +1,35 @@
+* { font-family: "Open Sans"; }
+body { background-color: #1c75fa; }
+/*body .container { color: #fff; }*/
+.container { margin: 100px auto; }
+nav.navbar { background-color: #1c75fa; border: unset; }
+nav > .container { margin: 0 auto; }
+.yellow-gradient { background: linear-gradient(#ffeaaa, #ffcc31); }
+button > strong,
+a > strong { color: #444444; }
+.active > a > strong { color: #1c75fa; }
+.active > .dropdown-menu > .active > a > strong { color: #fff; }
+ul.dropdown-menu > li.active > a > strong { color: #fff; }
+.text-white { color: #fff; }
+.text-red { color: #Fa0; }
+hr { border: solid 1px #fff; }
+.has-error .checkbox,
+.has-error .checkbox-inline,
+.has-error .control-label,
+.has-error .form-control-feedback,
+.has-error .help-block,
+.has-error .radio,
+.has-error .radio-inline,
+.has-error.checkbox label,
+.has-error.checkbox-inline label,
+.has-error.radio label,
+.has-error.radio-inline label { color: #ddd; }
+a:hover { text-decoration: unset; }
+a.btn.btn-default { background-color: buttonface; }
+.modal-body,
+.modal-header,
+.modal-footer { border: unset; }
+.modal-content { background-color: #1c75fa; color: #fff; }
+.navbar-default .navbar-nav>.open>a>strong,
+.navbar-default .navbar-nav>.open>a:focus>strong,
+.navbar-default .navbar-nav>.open>a:hover>strong { color: #1c75fa; }
