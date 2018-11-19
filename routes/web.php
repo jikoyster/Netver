@@ -59,9 +59,7 @@ Route::get('/ui-reports', function(){
 
 
 // accountants
-Route::get('/accountants', function () {
-	echo "Accountants";
-});
+Route::get('/accountants', 'AccountantController@index');
 
 
 // ERROR ROUTES
