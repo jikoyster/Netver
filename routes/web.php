@@ -14,10 +14,7 @@ use Illuminate\Http\Request;
 |
 */
 session_start();
-
-// Route::get('/register-accountant/testing', "TestingController@testing");
-Route::get('/change-password', "UserController@index");
-// 
+ 
 Route::get('/dashboard', "DashboardController@index");
 // Route::get('/advisors/login', "AdvisorsController@login");
 
@@ -28,6 +25,8 @@ Route::get('/profile', function(){
 		return redirect("/login");
 	}
 });
+// change this to /profile/change-password
+Route::get('/change-password', "UserController@index"); 
 
 //modifying login operation
 Route::get('/', function(Request $request){	
@@ -57,6 +56,17 @@ Route::get('/ui-reports', function(){
 
 	return view('ui-reports', ['reports' => $reports]);
 });
+
+
+// accountants
+Route::get('/accountants', function () {
+	echo "Accountants";
+});
+
+
+// ERROR ROUTES
+Route::get('404', ['as' => '404', 'uses' => 'ErrorController@notfound']);
+Route::get('500', ['as' => '500', 'uses' => 'ErrorController@fatal']);
 
 /*Route::get('/register-accountant', function () {
 		return view('home-accountant');
