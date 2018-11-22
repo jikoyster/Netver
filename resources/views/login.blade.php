@@ -165,8 +165,7 @@
 		<!--end::Base Scripts -->
 
 		<!--begin::Page Snippets -->
-		<!-- <script src="../assets/doctracc/assets/snippets/custom/pages/user/login.js" type="text/javascript"></script> -->
-
+		<script src="../assets/doctracc/assets/snippets/custom/pages/user/login.js" type="text/javascript"></script>
 		<!--end::Page Snippets -->
 	</body>
 
