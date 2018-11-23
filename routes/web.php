@@ -50,6 +50,10 @@ Route::post('/logout', function(){
 	return redirect("/");
 });
 
+// security
+Route::get('/security', 'SecurityController@index');
+
+// 
 Route::get('/ui-reports', function(){
 
 	$reports = DB::table('ui_reports')->get();
