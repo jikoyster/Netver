@@ -15,6 +15,13 @@ use Auth;
 
 class LoginController extends BaseController
 {
+	public function bk_login(Request $req){
+		$email = $req->input('email');
+		$password = $req->input('password');
+
+		echo $email."---".$password."<br/>";
+	}
+
 	public function login(Request $req){
 		$email = $req->input('email');
 		$password = $req->input('password');

@@ -25,7 +25,6 @@
 									<a href="javascript:;" id="m_aside_left_minimize_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-desktop-inline-block  ">
 										<span></span>
 									</a>
-
 									<!-- END -->
 
 									<!-- BEGIN: Responsive Aside Left Menu Toggler -->

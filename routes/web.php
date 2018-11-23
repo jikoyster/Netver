@@ -44,6 +44,8 @@ Route::get('/', function(Request $request){
 });
 
 Route::post('/login', 'LoginController@login');
+Route::get('/login', 'LoginController@bk_login');
+
 Route::post('/logout', function(){
 	session_destroy();
 
