@@ -219,17 +219,17 @@
 												<li class="nav-item m-tabs__item">
 													<a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_user_profile_tab_1" role="tab">
 														<i class="flaticon-share m--hide"></i>
-														Update Profile
+														User Profile
 													</a>
 												</li>
 												<li class="nav-item m-tabs__item">
 													<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_2" role="tab">
-														Messages
+														My Address
 													</a>
 												</li>
 												<li class="nav-item m-tabs__item">
 													<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_3" role="tab">
-														Settings
+														Password
 													</a>
 												</li>
 											</ul>
