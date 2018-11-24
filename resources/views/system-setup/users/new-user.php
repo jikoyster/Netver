@@ -4,7 +4,7 @@
             <div class="m-portlet__head-title">
                 <h3 class="m-portlet__head-text">
                     New User -  
-                    <small><i>This is just a place-holder.</i></small>
+                    <small>This is just a place-holder.</small>
                 </h3>
             </div>
         </div>

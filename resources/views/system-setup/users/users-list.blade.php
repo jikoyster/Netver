@@ -13,7 +13,7 @@
                     <a href="#" class="btn btn-primary m-btn m-btn--custom m-btn--icon m-btn--air">
                         <span>
                             <i class="la la-plus"></i>
-                            <span>New Record</span>
+                            <span>Add User</span>
                         </span>
                     </a>
                 </li>
