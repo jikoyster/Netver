@@ -1,0 +1,3 @@
+@include('HEAD')
+
+@include('FOOT')

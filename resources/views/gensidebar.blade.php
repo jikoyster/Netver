@@ -21,7 +21,7 @@
             </li>
             
             <!-- System Setup Menu Item -->
-            <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true">
+            <li id="System-Setup" class="m-menu__item  m-menu__item--submenu" aria-haspopup="true">
                 <a href="javascript:;" class="m-menu__link m-menu__toggle">
                     <i class="m-menu__link-icon flaticon-cogwheel-2"></i>
                     <span class="m-menu__link-text">System Setup</span>
@@ -37,7 +37,7 @@
                         </li>
 
                         <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true">
-                            <a href="javascript:;" class="m-menu__link m-menu__toggle">
+                            <a href="{{url('system-setup/menus')}}" class="m-menu__link m-menu__toggle">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                     <span></span>
                                 </i>
@@ -46,7 +46,7 @@
                         </li>
                         
                         <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true">
-                            <a href="{{url('security')}}" class="m-menu__link m-menu__toggle">
+                            <a href="{{url('system-setup/security')}}" class="m-menu__link m-menu__toggle">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                     <span></span>
                                 </i>

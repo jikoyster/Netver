@@ -32,10 +32,6 @@ Route::get('/change-password', "UserController@index");
 Route::get('/', function(Request $request){	
 	$session = $request->input();
 
-	// echo "adfsda: ";
-	// print_r($_SESSION['email']);
-
-	// if($session){
 	if( isset($_SESSION['email']) ){
 		return redirect("/dashboard");
 	}else{
@@ -46,24 +42,21 @@ Route::get('/', function(Request $request){
 Route::post('/login', 'LoginController@login');
 Route::post('/logout', function(){
 	session_destroy();
-
 	return redirect("/");
 });
 
 // security
-Route::get('/security', 'SecurityController@index');
-
-// 
-Route::get('/ui-reports', function(){
-
-	$reports = DB::table('ui_reports')->get();
-
-	return view('ui-reports', ['reports' => $reports]);
-});
-
+Route::get('/system-setup/{subpage}', 'SecurityController@subpage');
+Route::get('/system-setup', 'SecurityController@index');
 
 // accountants
 Route::get('/accountants', 'AccountantController@index');
+
+// reports
+Route::get('/ui-reports', function(){
+	$reports = DB::table('ui_reports')->get();
+	return view('ui-reports', ['reports' => $reports]);
+});
 
 
 // ERROR ROUTES
