@@ -39,20 +39,26 @@
 									<div class="m-portlet__body">
 										<ul class="nav nav-pills nav-fill" role="tablist">
 											<li class="nav-item">
-												<a class="nav-link active" data-toggle="tab" href="#m-tab1">Users List</a>
+												<a class="nav-link active" data-toggle="tab" href="#m-tab1">NAICS</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" data-toggle="tab" href="#m-tab2">New User</a>
+												<a class="nav-link" data-toggle="tab" href="#m-tab2">Journals</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" data-toggle="tab" href="#m-tab3">Registration Type</a>
 											</li>										
 										</ul>
 
                                         <!-- FEATURE OPTIONS CONTENT -->
 										<div class="tab-content">
 											<div class="tab-pane active" id="m-tab1" role="tabpanel">
-												@include('system-setup.users.users-list')
+												@include('system-setup.name-items-list.naics-codes')
                                             </div>
 											<div class="tab-pane" id="m-tab2" role="tabpanel">
-                                                @include('system-setup.users.new-user')
+                                                @include('system-setup.name-items-list.journals')
+											</div>
+											<div class="tab-pane" id="m-tab3" role="tabpanel">
+                                                @include('system-setup.name-items-list.registration-type')
                                             </div>
 										</div>
 									</div>

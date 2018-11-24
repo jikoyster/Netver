@@ -32,11 +32,13 @@ class SecurityController extends Controller
 
         switch($subpage){
             case 'menus':
+            case 'field-informations':
                 $view = 'system-setup.'.$subpage;
                 break;
             case 'security':
             case 'general':
             case 'users':
+            case 'name-items-list':
                 $view = 'system-setup.'. $subpage .'.index';
                 break;
             
