@@ -14,19 +14,6 @@ use Illuminate\Http\Request;
 |
 */
 session_start();
- 
-Route::get('/dashboard', "DashboardController@index");
-// Route::get('/advisors/login', "AdvisorsController@login");
-
-Route::get('/profile', function(){
-	if( isset($_SESSION['email']) ){
-		return view("profile");
-	}else{
-		return redirect("/login");
-	}
-});
-// change this to /profile/change-password
-Route::get('/change-password', "UserController@index"); 
 
 //modifying login operation
 Route::get('/', function(Request $request){	
@@ -48,6 +35,23 @@ Route::post('/logout', function(){
 	return redirect("/");
 });
 
+if( isset($_SESSION['email']) ){
+
+Route::get('/dashboard', "DashboardController@index");
+// Route::get('/advisors/login', "AdvisorsController@login");
+
+Route::get('/profile', function(){
+	if( isset($_SESSION['email']) ){
+		return view("profile");
+	}else{
+		return redirect("/login");
+	}
+});
+// change this to /profile/change-password
+Route::get('/change-password', "UserController@index"); 
+
+
+
 // security
 Route::get('/system-setup/{subpage}', 'SecurityController@subpage');
 Route::get('/system-setup', 'SecurityController@index');
@@ -61,6 +65,7 @@ Route::get('/ui-reports', function(){
 	return view('ui-reports', ['reports' => $reports]);
 });
 
+}//session
 
 // ERROR ROUTES
 Route::get('404', ['as' => '404', 'uses' => 'ErrorController@notfound']);
