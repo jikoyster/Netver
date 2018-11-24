@@ -5,7 +5,7 @@
 					<div class="m-subheader ">
 						<div class="d-flex align-items-center">
 							<div class="mr-auto">
-								<h3 class="m-subheader__title m-subheader__title--separator">Security</h3>
+								<h3 class="m-subheader__title m-subheader__title--separator">General</h3>
 								<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
 									<li class="m-nav__item m-nav__item--home">
 										<a href="#" class="m-nav__link m-nav__link--icon">
@@ -22,7 +22,7 @@
 									
 									<li class="m-nav__item">
 										<a href="" class="m-nav__link">
-											<span class="m-nav__link-text">Security</span>
+											<span class="m-nav__link-text">General</span>
 										</a>
 									</li>
 								</ul>
@@ -39,45 +39,33 @@
 									<div class="m-portlet__body">
 										<ul class="nav nav-pills nav-fill" role="tablist">
 											<li class="nav-item">
-												<a class="nav-link active" data-toggle="tab" href="#m-tab1">Feature Options</a>
+												<a class="nav-link active" data-toggle="tab" href="#m-tab1">Country</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" data-toggle="tab" href="#m-tab2">ACL</a>
+												<a class="nav-link" data-toggle="tab" href="#m-tab2">Province and States</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" data-toggle="tab" href="#m-tab3">Roles</a>
+												<a class="nav-link" data-toggle="tab" href="#m-tab3">Country Codes</a>
                                             </li>
                                             <li class="nav-item">
-												<a class="nav-link" data-toggle="tab" href="#m-tab4">User Groups</a>
-                                            </li>
-                                            <li class="nav-item">
-												<a class="nav-link" data-toggle="tab" href="#m-tab5">Permissions</a>
-											</li>
-											
+												<a class="nav-link" data-toggle="tab" href="#m-tab4">Historical Exchange Rates</a>
+                                            </li>											
 										</ul>
+
                                         <!-- FEATURE OPTIONS CONTENT -->
 										<div class="tab-content">
 											<div class="tab-pane active" id="m-tab1" role="tabpanel">
-												@include('system-setup.security.feature-options')
+												@include('system-setup.general.country')
                                             </div>
 											<div class="tab-pane" id="m-tab2" role="tabpanel">
-                                                @include('system-setup.security.acl')
+                                                @include('system-setup.general.state-province')
                                             </div>
-                                            
-
 											<div class="tab-pane" id="m-tab3" role="tabpanel">
-                                                @include('system-setup.security.roles')
+                                                @include('system-setup.general.currency-codes')
                                             </div>
-                                            
-
                                             <div class="tab-pane" id="m-tab4" role="tabpanel">
-                                                @include('system-setup.security.user-groups')
-                                            </div>
-                                            
-                                            <div class="tab-pane" id="m-tab5" role="tabpanel">
-                                                @include('system-setup.security.permissions')
+                                                @include('system-setup.general.historical-exchange-rates')
 											</div>
-											
 										</div>
 									</div>
 								</div>

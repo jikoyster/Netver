@@ -37,7 +37,9 @@ class SecurityController extends Controller
             case 'security':
                 $view = 'system-setup.security.index';
                 break;
-
+            case 'general':
+                $view = 'system-setup.general.index';
+                break;
             default:
                 $view = 'errors.404';
             break;
