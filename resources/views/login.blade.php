@@ -21,7 +21,6 @@
 				}
 			});
 		</script>
-
 		<!--end::Web font -->
 
 		<!--begin::Base Styles -->
@@ -34,6 +33,10 @@
 
 		<!--end::Base Styles -->
 		<link rel="shortcut icon" href="../assets/doctracc/assets/demo/default/media/img/logo/favicon.ico" />
+
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		
 	</head>
 
 	<!-- end::Head -->
@@ -59,8 +62,8 @@
 									<div class="m-login__head">
 										<h3 class="m-login__title">Sign In To Admin</h3>
 									</div>
-									<form class="m-login__form m-form" action="/login" method="post">
-										{{ csrf_field() }}
+									<form id="LoginForm" class="m-login__form m-form" action="/login" method="get">
+									{{ csrf_field() }}
 										<div class="form-group m-form__group">
 											<input class="form-control m-input" type="text" placeholder="Email" name="email" autocomplete="off">
 										</div>
@@ -79,10 +82,13 @@
 											</div>
 										</div>
 										<div class="m-login__form-action">
-											<button id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air">Sign In</button>
+											<!-- <button id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air">Sign In</button> -->
+											<input type="submit" id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air" value="Sign In" />
 										</div>
 									</form>
 								</div>
+
+
 								<div class="m-login__signup">
 									<div class="m-login__head">
 										<h3 class="m-login__title">Sign Up</h3>
@@ -165,10 +171,10 @@
 		<!--end::Base Scripts -->
 
 		<!--begin::Page Snippets -->
-		<!-- <script src="../assets/doctracc/assets/snippets/custom/pages/user/login.js" type="text/javascript"></script> -->
-
+		<script src="../assets/doctracc/assets/snippets/custom/pages/user/login.js" type="text/javascript"></script>
 		<!--end::Page Snippets -->
-	</body>
 
+		<script src="../assets/doctracc/assets/vendors/custom/myLogin.js" type="text/javascript"></script>
+	</body>
 	<!-- end::Body -->
 </html>
