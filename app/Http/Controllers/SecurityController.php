@@ -35,11 +35,11 @@ class SecurityController extends Controller
                 $view = 'system-setup.'.$subpage;
                 break;
             case 'security':
-                $view = 'system-setup.security.index';
-                break;
             case 'general':
-                $view = 'system-setup.general.index';
+            case 'users':
+                $view = 'system-setup.'. $subpage .'.index';
                 break;
+            
             default:
                 $view = 'errors.404';
             break;
