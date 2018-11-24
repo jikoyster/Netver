@@ -42,16 +42,7 @@
         <!--end::Base Styles -->
         <link rel="shortcut icon" href="../assets/doctracc/assets/demo/default/media/img/logo/favicon.ico" />
     
-    
-
-<<<<<<< HEAD
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-        
-=======
->>>>>>> origin/enable-js-login
     </head>
-
     <!-- end::Head -->
-
     <!-- begin::Body -->
 	<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">

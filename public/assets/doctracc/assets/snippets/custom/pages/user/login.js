@@ -3,18 +3,21 @@ var SnippetLogin=function(){var e=$("#m_login"),i=function(e,i,a){var l=$('<div 
 l.ajaxSubmit({
     url:"/L08!n",
     success:function(e,t,r,s){
-        setTimeout(function(){
+        // setTimeout(function(){
             
             a.removeClass("m-loader m-loader--right m-loader--light").attr("disabled",!1);
             if(e == 'error'){
                 i(l,"danger","Incorrect username or password. Please try again.");
             }else if(e == 'success'){
-                i(l,"success","LOGIN SUCCESSFUL!");
-                self.location="/dashboard";
-                location.reload();
+                i(l,"success","<i class='fa fa-check'></i> LOGIN SUCCESSFUL! Please wait...");
+                setTimeout(function(){
+                    self.location="/dashboard";
+                    location.reload();    
+                }, 2e3)
+                
             }
 
-            },2e3)
+            // },2e3)
     },
     
         }))}),
