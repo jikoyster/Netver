@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class SecurityController extends Controller
 {
@@ -32,6 +33,14 @@ class SecurityController extends Controller
 
         switch($subpage){
             case 'menus':
+                $menus = DB::table('menu_sets')			
+                // ->leftJoin('company_user', 'company_user.company_id', '=', 'companies.id')
+                // ->where('companies.company_type','client')
+                ->get();
+
+                $view = 'system-setup.'.$subpage;
+                return view($view, ['menus' => $menus]);
+                break;
             case 'field-informations':
                 $view = 'system-setup.'.$subpage;
                 break;
