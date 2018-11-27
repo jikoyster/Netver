@@ -46,7 +46,9 @@
 
 
 		<!-- begin:: Page -->
-		<div class="m-grid m-grid--hor m-grid--root m-page">
+		<div class="m-grid m-grid--hor m-grid--root m-page"> 
+				<!-- setting signup for default display  -->
+				<!-- change m-login--signup afterward -->
 			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-grid--tablet-and-mobile m-grid--hor-tablet-and-mobile m-login m-login--1 m-login--signin" id="m_login">
 				<div class="m-grid__item m-grid__item--order-tablet-and-mobile-2 m-login__aside">
 					<div class="m-stack m-stack--hor m-stack--desktop">
@@ -62,13 +64,13 @@
 									<div class="m-login__head">
 										<h3 class="m-login__title">Sign In To Admin</h3>
 									</div>
-									<form id="LoginForm" class="m-login__form m-form" action="/login" method="get">
+									<form id="LoginForm" class="m-login__form m-form" action="/login" method="post">
 									{{ csrf_field() }}
 										<div class="form-group m-form__group">
 											<input class="form-control m-input" type="text" placeholder="Email" name="email" autocomplete="off">
 										</div>
 										<div class="form-group m-form__group">
-											<input class="form-control m-input m-login__form-input--last" type="password" placeholder="Password" name="password">
+										<input class="form-control m-input m-login__form-input--last" type="password" placeholder="Password" name="password">
 										</div>
 										<div class="row m-login__form-sub">
 											<div class="col m--align-left">
@@ -94,7 +96,8 @@
 										<h3 class="m-login__title">Sign Up</h3>
 										<div class="m-login__desc">Enter your details to create your account:</div>
 									</div>
-									<form class="m-login__form m-form" action="">
+									<form id="SignupForm" class="m-login__form m-form" action="/signup" method="post">
+										{{ csrf_field() }}
 										<div class="form-group m-form__group">
 											<input class="form-control m-input" type="text" placeholder="Fullname" name="fullname">
 										</div>
@@ -102,7 +105,7 @@
 											<input class="form-control m-input" type="text" placeholder="Email" name="email" autocomplete="off">
 										</div>
 										<div class="form-group m-form__group">
-											<input class="form-control m-input" type="password" placeholder="Password" name="password">
+											<input class="form-control m-input" type="password" placeholder="Password" name="password" id="submit_form_password">
 										</div>
 										<div class="form-group m-form__group">
 											<input class="form-control m-input m-login__form-input--last" type="password" placeholder="Confirm Password" name="rpassword">
@@ -173,8 +176,6 @@
 		<!--begin::Page Snippets -->
 		<script src="../assets/doctracc/assets/snippets/custom/pages/user/login.js" type="text/javascript"></script>
 		<!--end::Page Snippets -->
-
-		<script src="../assets/doctracc/assets/vendors/custom/myLogin.js" type="text/javascript"></script>
 	</body>
 	<!-- end::Body -->
 </html>

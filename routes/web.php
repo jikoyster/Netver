@@ -26,9 +26,11 @@ Route::get('/', function(Request $request){
 	}	
 });
 
-// login
-Route::post('/login', 'LoginController@login');
-Route::get('/L08!n', 'LoginController@bk_login');
+// login - signup
+Route::post('/L08!n', 'UserController@login');
+Route::get('/L08!n', 'UserController@login');
+Route::post('/S!8nU9', 'UserController@signup');
+Route::get('/S!8nU9', 'UserController@signup');
 
 Route::post('/logout', function(){
 	session_destroy();
