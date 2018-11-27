@@ -59,7 +59,14 @@ Route::get('/system-setup/{subpage}', 'SecurityController@subpage');
 Route::get('/system-setup', 'SecurityController@index');
 
 // accountants
-Route::get('/accountants', 'AccountantController@index');
+Route::get('/accountants', function(){
+	$accountants = DB::table('companies')			
+				// ->leftJoin('designations', 'designations.id', '=', 'companies.multi_currency')
+				->leftJoin('country_currencies', 'country_currencies.id', '=', 'companies.country')
+				->where('companies.company_type','accounting')
+				->get();
+	return view('accountant-index', ['accountants' => $accountants]);
+});
 
 // reports
 Route::get('/ui-reports', function(){
