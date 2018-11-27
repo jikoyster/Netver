@@ -265,7 +265,7 @@
             </li>
 
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true">
-                <a href="#" class="m-menu__link m-menu__toggle">
+                <a href="{{url('/clients')}}" class="m-menu__link m-menu__toggle">
                     <i class="m-menu__link-icon flaticon-profile-1"></i>
                     <span class="m-menu__link-text">Clients</span>
                     <!-- <i class="m-menu__ver-arrow la la-angle-right"></i> -->

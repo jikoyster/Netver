@@ -58,6 +58,15 @@ Route::get('/change-password', "UserController@index");
 Route::get('/system-setup/{subpage}', 'SecurityController@subpage');
 Route::get('/system-setup', 'SecurityController@index');
 
+// clients
+Route::get('/clients', function(){
+	$clients = DB::table('companies')			
+				->leftJoin('company_user', 'company_user.company_id', '=', 'companies.id')
+				->where('companies.company_type','client')
+				->get();
+	return view('client-index', ['clients' => $clients]);
+});
+
 // accountants
 Route::get('/accountants', function(){
 	$accountants = DB::table('companies')			
