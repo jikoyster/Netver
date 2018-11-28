@@ -32,10 +32,11 @@ Route::get('/L08!n', 'UserController@login');
 Route::post('/S!8nU9', 'UserController@signup');
 Route::get('/S!8nU9', 'UserController@signup');
 
-Route::post('/logout', function(){
+Route::any('/logout', function(){
 	session_destroy();
 	return redirect("/");
 });
+// Route::get('/logout', function(){});
 
 if( isset($_SESSION['email']) ){
 
