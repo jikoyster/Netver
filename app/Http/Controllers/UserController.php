@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use DB;
 use Hash;
+use Session;
 use Illuminate\Database\QueryException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
@@ -36,13 +37,15 @@ class UserController extends BaseController
 		if(count($checklogin) > 0){
 		// if( Auth::check() ){
 			// echo "successful!";
-			
-			$_SESSION['email'] = DB::table('users')
-					->select('email')
+
+			// $_SESSION['email'] 
+			$lvsession = DB::table('users')
+					->select('users.*')
 					->where(['email'=>$email, 'password'=>Hash::check('plain-text',$password)])
 					->get();
-			
-			echo "success";
+			$curr_session = $lvsession[0];
+
+			echo " success";
 			// return redirect('/dashboard');
 		}else{
 			echo "error";

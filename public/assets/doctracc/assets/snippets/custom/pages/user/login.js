@@ -3,7 +3,7 @@ var SnippetLogin=function(){var e=$("#m_login"),i=function(e,i,a){var l=$('<div 
 l.validate({rules:{email:{required:!0,email:!0},password:{required:!0}}}),l.valid()&&(a.addClass("m-loader m-loader--right m-loader--light").attr("disabled",!0),
 
 l.ajaxSubmit({
-    type: "GET",
+    type: "POST",
     url:"/L08!n",
     success:function(e,t,r,s){
         // setTimeout(function(){
