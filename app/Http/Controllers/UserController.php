@@ -10,6 +10,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use DB;
+use Hash;
 use Illuminate\Database\QueryException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
@@ -28,8 +29,7 @@ class UserController extends BaseController
 		// echo $email."---".$password."<br/>";
 
 
-
-		$checklogin = DB::table('users')->where(['email'=>$email, 'password'=>sha1(md5($password))])->get();
+		$checklogin = DB::table('users')->where(['email'=>$email, 'password'=>Hash::check('plain-text',$password)])->get();
 		DB::table('users')
 			->update(['remember_token' => $req->session()->get('_token')]);
 
@@ -39,7 +39,7 @@ class UserController extends BaseController
 			
 			$_SESSION['email'] = DB::table('users')
 					->select('email')
-					->where(['email'=>$email, 'password'=>sha1(md5($password))])
+					->where(['email'=>$email, 'password'=>Hash::check('plain-text',$password)])
 					->get();
 			
 			echo "success";
@@ -69,7 +69,7 @@ class UserController extends BaseController
 					'home_phone'		=> $home_phone,
 					'mobile_phone'		=> $mobile_phone,
 					'email' 			=> $email,
-					'password'			=> sha1(md5($password)),
+					'password'			=> Hash::make($password),
 					'system_user_id' 	=> $system_user_id
 				]
 			);
