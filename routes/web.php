@@ -20,6 +20,7 @@ Route::get('/', function(Request $request){
 	$session = $request->input();
 
 	if( isset($_SESSION['email']) ){
+	// if(Session::get('email') != null ){
 		return redirect("/dashboard");
 	}else{
 		return view("login");
@@ -27,8 +28,8 @@ Route::get('/', function(Request $request){
 });
 
 // login - signup
-Route::post('/L08!n', 'UserController@login');
-Route::get('/L08!n', 'UserController@login');
+Route::any('/L08!n', 'UserController@login');
+// Route::get('/L08!n', 'UserController@login');
 Route::post('/S!8nU9', 'UserController@signup');
 Route::get('/S!8nU9', 'UserController@signup');
 

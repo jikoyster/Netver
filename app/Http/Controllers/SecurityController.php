@@ -29,7 +29,7 @@ class SecurityController extends Controller
     }
 
     public function subpage($subpage){
-        
+        $this->includeJQuery();        
 
         switch($subpage){
             case 'menus':
@@ -55,8 +55,6 @@ class SecurityController extends Controller
                 $view = 'errors.404';
             break;
         }
-        
-        $this->includeJQuery();
         
         return view($view);
     }

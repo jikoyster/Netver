@@ -7,7 +7,6 @@ l.ajaxSubmit({
     url:"/L08!n",
     success:function(e,t,r,s){
         // setTimeout(function(){
-            
             a.removeClass("m-loader m-loader--right m-loader--light").attr("disabled",!1);
             if(e == 'error'){
                 i(l,"danger","Incorrect username or password. Please try again.");
@@ -17,12 +16,10 @@ l.ajaxSubmit({
                     self.location="/dashboard";
                     location.reload();    
                 }, 2e3)
-                
             }
 
             // },2e3)
-    },
-    
+    },    
         }))}),
             
 $("#m_login_signup_submit").click(function(l){l.preventDefault();var t=$(this),r=$(this).closest("form");

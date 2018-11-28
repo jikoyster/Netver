@@ -17,6 +17,7 @@ use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 use Auth;
 
+
 class UserController extends BaseController
 {
 	public function index(){
@@ -25,33 +26,36 @@ class UserController extends BaseController
 
 	public function login(Request $req){
 		$email = $req->input('email');
-		$password = $req->input('password');
+		$password = $req->input('password') ;
+		$hashedPass = Hash::make($password) ;
 
-		// echo $email."---".$password."<br/>";
-
-
-		$checklogin = DB::table('users')->where(['email'=>$email, 'password'=>Hash::check('plain-text',$password)])->get();
+		// echo $email."---".Hash::check($password, $hashedPass)."<br/>";
+		
+		$checklogin = DB::table('users')
+				->select('*')
+				->where(['email'=>$email])
+				->get();
+		
+		$storedPw = $checklogin[0]->password;
+		$passwordFlag = Hash::check($password, $storedPw);
+		
 		DB::table('users')
 			->update(['remember_token' => $req->session()->get('_token')]);
-
-		if(count($checklogin) > 0){
+		if(count($checklogin) > 0 && $passwordFlag == 1){
 		// if( Auth::check() ){
 			// echo "successful!";
-
-			// $_SESSION['email'] 
-			$lvsession = DB::table('users')
-					->select('users.*')
-					->where(['email'=>$email, 'password'=>Hash::check('plain-text',$password)])
+			
+			$_SESSION['email'] = DB::table('users')
+					->select('email')
+					->where(['email'=>$email, 'password'=>Hash::check('plain-text',$hashedPass)])
 					->get();
-			$curr_session = $lvsession[0];
-
-			echo " success";
+			
+			echo "success";
 			// return redirect('/dashboard');
 		}else{
 			echo "error";
 			// return redirect('/');
 		}
-
 	}//END: LOGIN
 
 	public function signup(Request $req){
@@ -83,4 +87,17 @@ class UserController extends BaseController
 		}
 	}
     //
+}
+
+
+// random string generator
+function randomString($length = 6) {
+	$str = "";
+	$characters = array_merge(range('A','Z'), range('0','9'));
+	$max = count($characters) - 1;
+	for ($i = 0; $i < $length; $i++) {
+		$rand = mt_rand(0, $max);
+		$str .= $characters[$rand];
+	}
+	return $str;
 }
