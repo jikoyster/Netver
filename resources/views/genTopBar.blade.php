@@ -1,3 +1,5 @@
+<?php $loggedin_user = Session::get('loggedin_user'); ?>
+
 <header id="m_header" class="m-grid__item    m-header " m-minimize-offset="200" m-minimize-mobile-offset="200">
 				<div class="m-container m-container--fluid m-container--full-height">
 					<div class="m-stack m-stack--ver m-stack--desktop">
@@ -268,8 +270,10 @@
                 
                 <li class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img  m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
                     <a href="{{url('profile')}}" class="m-nav__link m-dropdown__toggle.bk">
-                        <span class="m-topbar__userpic">
+                        <span class="m-topbar__userpic"> 
+                            <!-- @{!! $loggedin_user->first_name !!} -->
                             <img src="../assets/doctracc/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless" alt="" />
+                            <!-- <img src="assets/images/authors/avatar.jpg" class="m--img-rounded m--marginless" alt="ds" /> -->
                         </span>
                         <span class="m-topbar__username m--hide">Nick</span>
                     </a>

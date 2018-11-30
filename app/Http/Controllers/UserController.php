@@ -36,6 +36,8 @@ class UserController extends BaseController
 				->where(['email'=>$email])
 				->get();
 		
+		// Session::put('email',$checklogin[0]->email);
+		Session::put('loggedin_user',$checklogin[0]);
 		$storedPw = $checklogin[0]->password;
 		$passwordFlag = Hash::check($password, $storedPw);
 		
@@ -60,18 +62,20 @@ class UserController extends BaseController
 
 	public function signup(Request $req){
 		$fullname = $req->input('fullname');
+		$first_name = '';//$req->input('');
 		$last_name = '';//$req->input('');
 		$home_phone = '';//$req->input('');
 		$mobile_phone = '';//$req->input('');
 		$email = $req->input('email');
 		$password = $req->input('password');
-		$system_user_id = $req->session()->get('_token');
+		$system_user_id = randomString();//$req->session()->get('_token');
 
 		try
 		{
 			$id = DB::table('users')->insertGetId(
 				[
-					'fullname'		=> $fullname,
+					'fullname'			=> $fullname,
+					'first_name'		=> $first_name,
 					'last_name'			=> $last_name,
 					'home_phone'		=> $home_phone,
 					'mobile_phone'		=> $mobile_phone,
