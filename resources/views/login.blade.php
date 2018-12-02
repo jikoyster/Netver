@@ -99,7 +99,10 @@
 									<form id="SignupForm" class="m-login__form m-form" action="/signup" method="post">
 										{{ csrf_field() }}
 										<div class="form-group m-form__group">
-											<input class="form-control m-input" type="text" placeholder="Fullname" name="fullname">
+											<input class="form-control m-input" type="text" placeholder="First Name" name="first_name">
+										</div>
+										<div class="form-group m-form__group">
+											<input class="form-control m-input" type="text" placeholder="Last Name" name="last_name">
 										</div>
 										<div class="form-group m-form__group">
 											<input class="form-control m-input" type="text" placeholder="Email" name="email" autocomplete="off">

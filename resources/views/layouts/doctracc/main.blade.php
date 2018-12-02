@@ -43,6 +43,8 @@
     <!--end::Base Styles -->
     <link rel="shortcut icon" href="../assets/doctracc/assets/demo/default/media/img/logo/favicon.ico" />
 
+    @yield('header-custom-scripts')
+
 </head>
 <!-- end::Head -->
 <!-- begin::Body -->
@@ -287,8 +289,9 @@
 
     <!--begin::Page Snippets -->
     <script src="../assets/doctracc/assets/app/js/dashboard.js" type="text/javascript"></script>
-
     <!--end::Page Snippets -->
+
+    @yield('footer-custom-scripts')
 </body>
 
 <!-- end::Body -->

@@ -32,15 +32,8 @@ if( isset($_SESSION['email']) ){
 Route::get('/dashboard', "DashboardController@index");
 // Route::get('/advisors/login', "AdvisorsController@login");
 
-Route::get('/profile', function(){
-	if( isset($_SESSION['email']) ){
-		return view("profile");
-	}else{
-		return redirect("/login");
-	}
-});
-// change this to /profile/change-password
-Route::get('/change-password', "UserController@index"); 
+Route::get('/profile', 'UserController@profile');
+Route::get('/profile/{subpage}', 'UserController@profileAction');
 
 
 
