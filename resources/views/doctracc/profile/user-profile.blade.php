@@ -1,6 +1,12 @@
 @section('header-custom-scripts')
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="assets/doctracc/assets/vendors/custom/profile-myscript.js"></script>
+
+	<style type="text/css">
+		.form-control[readonly]{
+			background: #eee !important;
+		}
+	</style>
 @stop
 
 
@@ -21,14 +27,14 @@
 		<div class="form-group m-form__group row">
 			<label for="example-text-input" class="col-2 col-form-label">ID</label>
 			<div class="col-7">
-				<input class="form-control m-input" name="id" value="{{ $data->system_user_id }}" type="text" readonly>
+				<input class="form-control m-input" name="id" value="{{ $data->system_user_id }}" readonly>
 			</div>
 		</div>
 		<!-- email -->
 		<div class="form-group m-form__group row">
 			<label for="example-text-input" class="col-2 col-form-label">Email</label>
 			<div class="col-7">
-				<input class="form-control m-input" name="email" value="{{ $data->email }}" type="text" readonly/>
+				<input class="form-control m-input" name="email" value="{{ $data->email }}" readonly/>
 			</div>
 		</div>
 		<!-- first_name -->
