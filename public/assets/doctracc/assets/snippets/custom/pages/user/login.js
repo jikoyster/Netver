@@ -25,7 +25,7 @@ l.ajaxSubmit({
 $("#m_login_signup_submit").click(function(l){l.preventDefault();var t=$(this),r=$(this).closest("form");
 
 //VALIDATIONS SIGNUP HERE --
-r.validate({rules:{fullname:{required:!0},email:{required:!0,email:!0},password:{required:!0},rpassword:{required:!0,equalTo:"#submit_form_password"},agree:{required:!0}}});
+r.validate({rules:{last_name:{required:!0},first_name:{required:!0},email:{required:!0,email:!0},password:{required:!0},rpassword:{required:!0,equalTo:"#submit_form_password"},agree:{required:!0}}});
 
 r.valid()&&(t.addClass("m-loader m-loader--right m-loader--light").attr("disabled",!0),
 
@@ -36,8 +36,7 @@ r.ajaxSubmit({
     success:function(l,s,n,o){
         t.removeClass("m-loader m-loader--right m-loader--light").attr("disabled",!1);
         
-
-        if(l != 'success'){
+        if(l == 'error'){
             var l=e.find(".m-login__signup form");l.validate(),i(l,"danger","The email entered seems to be already registered to this site.")
         }else if(l == 'success'){
             // setTimeout(function(){    
@@ -45,9 +44,6 @@ r.ajaxSubmit({
                 r.clearForm();
             // },2e3)
         }
-
-        
-        
     }}))}),
 
 $("#m_login_forget_password_submit").click(function(l){l.preventDefault();var t=$(this),r=$(this).closest("form");r.validate({rules:{email:{required:!0,email:!0}}}),r.valid()&&(t.addClass("m-loader m-loader--right m-loader--light").attr("disabled",!0),r.ajaxSubmit({url:"",success:function(l,s,n,o){setTimeout(function(){t.removeClass("m-loader m-loader--right m-loader--light").attr("disabled",!1),r.clearForm(),r.validate().resetForm(),a();var l=e.find(".m-login__signin form");l.clearForm(),l.validate().resetForm(),i(l,"success","Cool! Password recovery instruction has been sent to your email.")},2e3)}}))})}}}();jQuery(document).ready(function(){SnippetLogin.init()});
