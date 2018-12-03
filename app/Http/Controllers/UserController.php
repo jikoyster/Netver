@@ -18,6 +18,7 @@ use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Auth;
 
 use app\User;
+use app\CountryCurrency;
 
 
 class UserController extends BaseController{
@@ -99,7 +100,10 @@ class UserController extends BaseController{
 		if( isset($_SESSION['email']) ){
 			$loggedin_user_email = Session::get('email');
 			if(isset($loggedin_user_email))
-				return view("doctracc.profile.profile")->with('users', $this->get_user_info($loggedin_user_email));
+				return view("doctracc.profile.profile")->with(['users' => $this->get_user_info($loggedin_user_email),
+																'countries' => $this->get_countries(),
+																'state_provinces' => $this->get_state_provinces()
+																]);
 			else{
 				session_destroy();
 				redirect("/");
@@ -182,15 +186,28 @@ class UserController extends BaseController{
 				}else{
 					echo "error";
 				}
-
-				
-
+				break;
+			case 'saveAddress':
+				print_r( $this->get_country() );
 				break;
 			default: 
 				break;
 		}
 	}// end function: profileAction
 
+	private function get_countries(){
+		$countries = DB::table('country_currencies as c')
+					->select(array('c.country_name', 'c.id'))
+					->get();
+		return $countries;
+	}// end function get_country
+
+	private function get_state_provinces(){
+		$state_provinces = DB::table('state_provinces as sp')
+					->select(array('sp.state_province_name', 'sp.id'))
+					->get();
+		return $state_provinces;
+	}// end function get_country
 
 	//end of class
 }
