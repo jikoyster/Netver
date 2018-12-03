@@ -98,7 +98,13 @@ class UserController extends BaseController{
 	public function profile(){
 		if( isset($_SESSION['email']) ){
 			$loggedin_user_email = Session::get('email');
-			return view("doctracc.profile.profile")->with('users', $this->get_user_info($loggedin_user_email));
+			if(isset($loggedin_user_email))
+				return view("doctracc.profile.profile")->with('users', $this->get_user_info($loggedin_user_email));
+			else{
+				session_destroy();
+				redirect("/");
+			}
+				
 		}else{
 			return redirect("/");
 		}
@@ -148,10 +154,42 @@ class UserController extends BaseController{
 							'mobile_phone'	=> $mobile_phone
 							]);
 				break;
+			case 'changePassword':
+				$id				= $_REQUEST['id'];
+				$old_password	= $_REQUEST['old_password'];
+				$new_password	= $_REQUEST['new_password'];
+
+				$hashed_password = '';
+				//get password 
+				$saved_hashed_password = DB::table('users')
+											->select('password')
+											->where('system_user_id',$id)
+											->get();
+
+				foreach($saved_hashed_password as $key => $data)
+						$hashed_password = $data->password;
+
+				// compare pw: check if password(fromDB) == $_REQUEST['password']
+				if( Hash::check($old_password, $hashed_password) ){
+					// update table('users'): 'password' => Hash::make('password')
+					
+					DB::table('users')
+					->where('system_user_id', '=',$id)
+					->update([
+							'password'	=> Hash::make($new_password),
+							]);
+					echo "success";
+				}else{
+					echo "error";
+				}
+
+				
+
+				break;
 			default: 
 				break;
 		}
-	}
+	}// end function: profileAction
 
 
 	//end of class

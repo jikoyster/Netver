@@ -74,7 +74,9 @@
 					<div class="col-2">
 					</div>
 					<div class="col-7">
-						<button id="saveUserProfileButton" type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom">Save changes</button>&nbsp;&nbsp;
+						<button id="saveUserProfileButton" type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom">
+							Save changes
+						</button>&nbsp;&nbsp;
 						<button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">Cancel</button>
 					</div>
 				</div>

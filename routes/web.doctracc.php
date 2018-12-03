@@ -33,7 +33,7 @@ Route::get('/dashboard', "DashboardController@index");
 // Route::get('/advisors/login', "AdvisorsController@login");
 
 Route::get('/profile', 'UserController@profile');
-Route::get('/profile/{subpage}', 'UserController@profileAction');
+Route::any('/profile/{subpage}', 'UserController@profileAction');
 
 
 

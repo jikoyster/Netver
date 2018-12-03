@@ -1,6 +1,6 @@
-@foreach ($users as $key => $data)
 <div class="m-portlet m-portlet--full-height  ">
     <div class="m-portlet__body">
+    @foreach ($users as $key => $data)
         <div class="m-card-profile">
             <div class="m-card-profile__title m--hide">
                 Your Profile
@@ -67,7 +67,6 @@
                 </a>
             </li>
         </ul>
-
+    @endforeach
     </div>
 </div>
-@endforeach
